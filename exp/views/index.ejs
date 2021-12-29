@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #bdd4e7;
+            background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+            min-height: 100vh;
+        }
+    </style>
+    <title>api Creator</title>
+</head>
+
+<body>
+    <div class="container mx-auto text-center pt-8 text-gray-100">
+        <div class="flex justify-between">
+            <h1 class="text-2xl font-bold italic text-gray-800">Welcome to Api Creator!</h1>
+            <a href="/find">
+                <button
+                    class="bg-blue-300 px-4 py-2 rounded shadow-lg text-gray-800 hover:bg-blue-200 transition duration-300">Find
+                    Records</button>
+            </a>
+        </div>
+
+
+        <form action="/" method="POST" class="mt-8 flex flex-col w-5/12 mx-auto gap-2">
+            <span class="text-gray-100 text-lg text-gray-100">Database Name</span>
+            <input required name="dbname" type="text"
+                class="rounded px-4 py-2 text-gray-800 focus:outline-none shadow-lg">
+            <span class="text-gray-100 text-lg text-gray-100">Collection Name</span>
+            <input name="colname" type="text" class="rounded px-4 py-2 text-gray-800 focus:outline-none shadow-lg">
+            <span class="text-gray-100 text-lg text-gray-100">Type the document</span>
+            <textarea name="doc" cols="20" rows="7"
+                class="rounded focus:outline-none shadow-lg text-gray-800 px-4 py-2"></textarea>
+            <span class="text-gray-100 text-lg text-gray-100">Server Response</span>
+            <textarea readonly name="" id="" cols="20" rows="10"
+                class="rounded focus:outline-none shadow-lg text-gray-800 px-4 py-2">
+    <%= dbLog %>
+    <%= colLog %>
+            </textarea>
+            <input class="bg-blue-700 py-2 px-4 rounded hover:bg-blue-800 transition duration-300" type="submit"
+                value="Create Database">
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>
