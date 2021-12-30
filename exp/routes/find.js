@@ -11,8 +11,12 @@ router.post("/", async (req, res) => {
   let dbName = req.body.dbname;
   mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`);
   const Products = FactoryModel(req.body.colname);
-  const foundData = await Products.find(JSON.parse(req.body.find));
+  let searchThis = `${req.body.find}`;
+  if (!searchThis) searchThis = "";
+  console.log(typeof searchThis);
+  const foundData = await Products.find({});
   console.log(foundData);
+  res.send(foundData);
 
   // Connecting to the database
 
